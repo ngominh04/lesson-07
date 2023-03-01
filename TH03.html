@@ -1,0 +1,41 @@
+ <!DOCTYPE html>
+ <html lang="en">
+ <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vòng lặp</title>
+   
+ </head>
+ <body>
+    <section>
+        <form action="" method="post" name="vonglap">
+            <div>
+                <label for="so">Chọn số để lặp:</label>
+                <input type="number" id="so" name="so">
+            </div>
+            <div>
+                <label for=""></label>
+                <input type="button" name="lap" value="lặp" onclick="fn_snt()">
+            </div>
+            <div class="zone1">
+                <label for="input"></label>
+                <input type="text" id="input" name="input">
+            </div>
+        </form>
+    </section>
+    <script>
+        const fn_snt= ()=>
+        {
+            let a=vonglap.so.value;
+            let b=1;
+            let kp="";
+            for(b=1;b<=a;b++)
+            {
+                kp+=b;
+            }
+            vonglap.input.value = kp;
+        }
+    </script>
+ </body>
+ </html>

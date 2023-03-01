@@ -1,0 +1,76 @@
+ <!DOCTYPE html>
+ <html lang="en">
+ <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kiểm tra số nguyên tố (2)</title>
+    <style>
+        section{
+            width: 500px;
+            background-color: rgb(101, 54, 4);
+        }
+    </style>
+ </head>
+ <body>
+    <section>
+        <h1>Kiểm tra số nguyên tố (2)</h1>
+        <hr>
+            <form action="" method="post" name="frmSNT">
+                <div>
+                    <label for="hsA"><font color="yellow">Số cần kiểm tra: </font> </label>
+                    <input type="number" name="hsA" id="hsA">
+                </div>
+                <div>
+                    <br>
+                    <label for=""></label>
+                    <input type="button" name="btnKT" value="Kiểm tra" onclick="fn_snt()">
+                    <hr>
+                </div>
+                <div>
+                    <label for="ketQua"><font color="yellow">Kết quả:</font> </label>
+                    <input type="text" name="ketQua" id="ketQua" readonly>
+                </div>
+            </form>
+        <script>
+            const fn_snt= () =>
+            {
+                let a=frmSNT.hsA.value;
+                let kt=true;
+                let b=3;
+                let kp="";
+                if(a<1)
+                {
+                    kt=false;
+                }
+                else if(a==2)
+                {
+                    kt=true;
+                }
+                else if(a%2==0)
+                {
+                    kt =false;
+                }
+                else
+                {
+                    for(b=3;b<a-1;b++)
+                    {
+                        if(a%b==0)
+                        {
+                            kt=false;break;
+                        }
+                    }
+                }
+                if(kt==true)
+                {
+                    kp=a+" Là số nguyên tố";
+                }
+                else{
+                    kp=a+" Không là số nguyên tố";
+                }
+                frmSNT.ketQua.value = kp;
+            }
+        </script>
+    </section>
+ </body>
+ </html>
