@@ -1,0 +1,58 @@
+ <!DOCTYPE html>
+ <html lang="en">
+ <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kiểm tra số nguyên tố</title>
+ </head>
+ <body>
+    <section>
+        <h1>Kiểm tra số nguyên tố</h1>
+        <hr>
+        <form action="" method="post" name="frmSNT">
+            <div>
+                <label for="hsA">Số cần kiểm tra</label>
+                <input type="number" name="hsA" id="hsA">
+            </div>
+            <div>
+                <label for=""></label>
+                <input type="button" name="btnKT" value="KT" onclick="fn_snt()">
+            </div>
+            <div>
+                <label for="ketQua">Kết quả:</label>
+                <input type="text" name="ketQua" id="ketQua" readonly>
+            </div>
+        </form>
+    </section>
+    <script>
+        const fn_snt= ()=>
+        {
+            let a=frmSNT.hsA.value;
+            a=parseFloat(a);
+            let kp="";
+            let b=2,kt=true;
+            if(a<2){
+                kt=false;
+            }
+            else{
+                for(b=2;b<a-1;b++)
+                {
+                    if(a%b==0)
+                    {
+                        kt=false;
+                        break;
+                    }
+                }
+            }
+            if(kt==true){
+                kp=a+" Là số nguyên tố";
+            }
+            else{
+                kp=a+" Không là số nguyên tố";
+            }
+        frmSNT.ketQua.value = kp;
+        };
+    </script>
+ </body>
+ </html>
