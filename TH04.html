@@ -1,0 +1,80 @@
+ <!DOCTYPE html>
+ <html lang="en">
+ <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>In ra các số nguyên tố</title>
+ </head>
+ <body >
+    <section>
+        <h1>In ra các số nguyên tố </h1>
+        <hr>
+            <form action="" method="post" name="frmSNT">
+                <div>
+                    <label for="hsA"><font color="yellow">Số cần kiểm tra: </font> </label>
+                    <input type="number" name="hsA" id="hsA">
+                </div>
+                <div>
+                    <br>
+                    <label for=""></label>
+                    <input type="button" name="btnKT" value="Kiểm tra" onclick="fn_snt()">
+                    <hr>
+                </div>
+                <div>
+                    <label for="ketQua"><font color="yellow">Kết quả:</font> </label>
+                    <br>
+                </div>
+            </form>
+        <script>
+            const fn_snt= (a) =>
+            {
+                let a=frmSNT.hsA.value;
+                let kt=true;
+                let b;
+                for(b=0;b<=a;b++)
+                {
+                    if(a<1)
+                    {
+                        kt=false;
+                    }
+                    else if(a==2)
+                    {
+                        kt=true;
+                    }
+                    else if(a%2==0)
+                    {
+                        kt =false;
+                    }
+                    else
+                    {
+                       if(a%b==0)
+                       {
+                           kt=false;break;
+                       }
+                    }    
+                }
+                if(kt==true)
+                    {
+                        return a;
+                    }
+                
+            }
+            const fn_inSNT=()=>
+            {
+                let n=frmSNT.hsA.value;
+                n=parseInt(n);
+                for(let b=1;b<=n;b++)
+                {
+                    if(fn_snt(b))
+                    {
+                        n+=b;
+                    }
+                }
+                frmSNT.ketQua.value = n;
+            }
+        </script>
+    </section>
+ </body>
+ </html>
+ <!-- sửa thêm  -->
